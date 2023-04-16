@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<header>
+    <h1 th:text="${mainTitle}" id="main-title"></h1>
+</header>
+<div class="grid-container resources">
+    <div class="grid-item" id="description-section">
+        <h2 th:text="${mainTitle}" id="description-heading"></h2>
+        <p  th:text="${descriptionBody}" id="description-body"></p>
+        <br>
+
+        <h2 th:text="${listItemsHeading}" id="list-items-heading"></h2>
+        <ul id="list-items-section">
+            <li th:each="listItem: ${listItems}">
+                <b><span th:text="${listItem.key}"></span></b>
+                <span th:text="${listItem.value}"></span>
+            </li>
+        </ul>
+        <br>
+
+        <h2 th:text="${adviceHeading}" id="advice-heading"></h2>
+        <p th:text="${adviceBody}" id="advice-body"></p>
+        <br>
+        <button onclick="window.history.back();">Back</button>
+    </div>
+</div>
+
+
+
+</body>
+</html>
