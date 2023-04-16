@@ -1,0 +1,1 @@
+{\"type\": \"graph\", \"data\" : {\"title\" : \"Covid cases\", \"titleLabel\" : \"Number of cases (100s)\", \"type\" : \"covid\", \"data\" : [1.0, 5.0, 3.0], \"labels\" : [\"Jan\", \"Feb\", \"Mar\"]}}
