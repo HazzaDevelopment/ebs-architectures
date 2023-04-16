@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+<header>
+    <h1 id="main-title"></h1>
+</header>
+<div class="grid-container resources">
+    <div class="grid-item" id="description-section">
+        <h2 id="description-heading"></h2>
+        <p id="description-body"></p>
+        <br>
+
+        <h2 id="list-items-heading"></h2>
+        <ul id="list-items-section"></ul>
+        <br>
+
+        <h2 id="advice-heading"></h2>
+        <p id="advice-body"></p>
+        <br>
+        <button onclick="window.location.href = 'index.html';">Back</button>
+    </div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageId = urlParams.get('id');
+
+    $.get(`http://ebs-server-lb-262398984.us-east-2.elb.amazonaws.com:81/resources/${pageId}`, function (data) {
+        console.log(data)
+        var title = data.title
+        var descriptionHeading = data.descriptionHeading
+        var descriptionBody = data.descriptionPanel
+        var adviceHeading = data.advicePanelHeading
+        var adviceBody = data.advicePanel
+        var listItems = data.listItems
+        var listItemsHeading = data.listItemsHeading
+
+        document.title = title;
+        $('#main-title').text(`${title}`);
+        $('#description-heading').text(descriptionHeading);
+        $('#description-body').text(descriptionBody);
+        $('#advice-heading').text(adviceHeading);
+        $('#advice-body').text(adviceBody);
+        $('#list-items-heading').text(listItemsHeading);
+
+        for (const key in listItems) {
+            $('#list-items-section').append(`
+            <li><strong>${key}</strong> ${listItems[key]}
+            </li>`);
+        }
+
+    });
+</script>
+
+</body>
+</html>
