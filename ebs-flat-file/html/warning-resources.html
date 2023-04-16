@@ -1,0 +1,52 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <title>Warning Resources</title>-->
+<!--    <link rel="stylesheet" href="web.css">-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <h1>Warning Resources</h1>-->
+<!--</header>-->
+<!--<div class="grid-container resources">-->
+<!--    <div class="grid-item">-->
+<!--        <h2>What is the disruption?</h2>-->
+<!--        <div id="description"></div>-->
+
+<!--        <h2>What does the disruption involve?</h2>-->
+<!--        <div id="disruption-contents"></div>-->
+
+<!--        <h2>What should you do?</h2>-->
+<!--        <div id="guideline"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="navigation">-->
+<!--    <button onclick="window.location.href = 'index.html';">Back</button>-->
+<!--</div>-->
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        // Get the resource type from the URL parameter-->
+<!--        const urlParams = new URLSearchParams(window.location.search);-->
+<!--        const type = urlParams.get('type');-->
+<!--        // Make the HTTP request to the server with the selected resource type-->
+<!--        $.get(`/warning-resources?type=${type}`, function (data) {-->
+<!--            var resource = data[i];-->
+<!--            var description = resource.description;-->
+<!--            var disruptionContents = resource.disruptionContents;-->
+<!--            var guideline = resource.guideline;-->
+<!--            $('#description').append(`-->
+<!--                <p>${description}</p>-->
+<!--            `);-->
+<!--            $('#disruption-contents').append(`-->
+<!--                <p>${disruptionContents}</p>-->
+<!--            `);-->
+<!--            $('#guideline').append(`-->
+<!--                <p>${guideline}</p>-->
+<!--            `);-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

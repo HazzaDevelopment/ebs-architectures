@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link media="all" rel="stylesheet" href="../css/web.css"/>
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.5.0/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v6.5.0/build/ol.js"></script>
+
+    <title>Emergency Events</title>
+</head>
+<body>
+<header>
+    <h1>Emergency Events</h1>
+</header>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <h2>Resources</h2>
+        <hr>
+        <ul id="resource-section" class="navigation"></ul>
+        <ul class="navigation">
+            <li><a id="terror-link" href="terror-resources.html" data-resource-type="terror">Terrorism</a></li>
+            <li><a id="environment-link" href="environment-resources.html" data-resource-type="environment">Environmental</a></li>
+            <li><a id="public-health-link" href="health-resources.html" data-resource-type="public_health">Public Health</a></li>
+            <li><a id="civil-emergency-link" href="civil-resources.html" data-resource-type="civil_emergency">Civil Emergency</a></li>
+            <li><a id="transportation-link" href="transport-resources.html" data-resource-type="transportation">Transportation Disruptions</a></li>
+            <li><a id="natural-disasters-link" href="natural-disaster-resources.html" data-resource-type="natural_disasters">Natural Disasters</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-item">
+        <h2>UK COVID-19 Statistics</h2>
+        <hr>
+        <canvas id="covidCasesChart"></canvas>
+        <hr>
+        <p>At the beginning of 2022, many parts of the world experienced a surge in COVID-19 cases. January and February
+            were particularly challenging months, as the highly infectious Omicron variant of the virus spread rapidly,
+            leading to a sharp increase in the number of new infections. Hospitals became overwhelmed with patients, and
+            governments had to implement strict measures to slow the spread of the virus. However, as more people became
+            vaccinated and booster shots were rolled out, the number of cases gradually began to decrease. By late
+            February, many countries saw a significant drop in daily case numbers, giving some hope that the worst of
+            the pandemic may be over. Nonetheless, the situation remains unpredictable, and people are still being
+            encouraged to take all necessary precautions to protect themselves and others.</p>
+    </div>
+
+    <div class="grid-item">
+        <h2>Warnings</h2>
+        <hr>
+        <canvas id="warningChart"></canvas>
+        <hr>
+        <p>
+            Terrorism and transportation disruption are often interlinked, as terrorist attacks can cause significant
+            disruption to transportation systems such as airports, train stations, and public transportation.
+            The disruption can range from temporary delays to long-term closures, which can have serious economic,
+            social, and security consequences. Some common methods of transportation disruption used by
+            terrorists include bombings, hijackings, cyber-attacks, and sabotage. Governments and transportation
+            authorities around the world have implemented various security measures to prevent terrorist attacks and
+            minimize the impact of transportation disruption. These measures include increased surveillance, passenger
+            screening, and emergency response planning. Despite these efforts, the threat of terrorism and
+            transportation disruption remains a significant challenge for societies worldwide.
+        </p>
+    </div>
+
+    <div class="grid-item">
+        <h2>Crime Statistics in Cardiff</h2>
+        <hr>
+        <canvas id="crimeChart"></canvas>
+        <hr>
+        <p>
+            In the UK, crime rates have shown a trend of increasing in April, followed by a tapering off in the
+            following months. This may be due to factors such as increased free time among young people at the end of
+            the academic year, and an uptick in travel-related crime during the Easter holiday. However, as the year
+            progresses, crime rates tend to decrease due to factors such as increased police presence during the summer
+            months and greater community involvement in crime prevention efforts. It is important for the government
+            and law enforcement agencies to be aware of these seasonal fluctuations and implement appropriate measures
+            to address them.
+        </p>
+    </div>
+
+    <div class="grid-item">
+        <h2>Global Natural Disasters</h2>
+        <hr>
+        <div id="map" style="width:100%; height:500px;"></div>
+        <hr>
+        <p>A Heatmap-Based Natural Disaster Warning System is an innovative tool that visually represents the potential
+            risk levels of various natural disasters in a geographic area using color-coded heatmaps. By aggregating
+            real-time data from multiple sources, such as meteorological agencies and geological surveys, this system
+            identifies disaster-prone regions and assigns risk levels based on the likelihood and severity of events
+            like hurricanes, earthquakes, floods, or wildfires. Users can easily understand and interpret the current
+            and predicted risk levels, enabling them to make informed decisions about safety measures, evacuation
+            planning, and resource allocation for emergency response.</p>
+    </div>
+
+    <div class="grid-item">
+        <h2>Breaking News</h2>
+        <hr>
+        <ul id="articles-section">
+            <li>
+                <article>
+                    <h3>Major Earthquake Strikes Coastal City: Thousands Evacuated</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Turkey_Earthquake_Damage.jpg/1280px-2023_Turkey_Earthquake_Damage.jpg" alt="Earthquake-damaged buildings">
+                    <p>A powerful earthquake with a magnitude of 7.8 has struck a coastal city, causing widespread damage and prompting immediate evacuations. Emergency services are working tirelessly to search for survivors and provide assistance to those affected. Stay tuned for the latest updates on this developing story.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Category 5 Hurricane Approaches: Evacuation Orders Issued</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZPSwTOY14nGq__Itkr8_0nH5IehclhpjMQUADvUkHYQ&s" alt="Satellite image of a hurricane">
+                    <p>A dangerous Category 5 hurricane is rapidly approaching, with meteorologists predicting catastrophic damage to the region. Authorities have issued evacuation orders for residents in the storm's path. Follow our live coverage for the latest information on this life-threatening situation.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Wildfire Rages Out of Control: Firefighters Battle to Save Lives and Property</h3>
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/631b45a98e8291773db586dc/0x0.jpg?format=jpg&crop=2877,1619,x0,y141,safe&width=1200" alt="Smoke billowing from a wildfire">
+                    <p>A massive wildfire continues to spread rapidly, forcing evacuations and threatening lives and property. Firefighters from multiple agencies are working around the clock to contain the blaze, while residents in nearby areas are urged to remain vigilant and prepared to evacuate at a moment's notice.</p>
+                </article>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
